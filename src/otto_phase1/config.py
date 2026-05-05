@@ -14,7 +14,7 @@ class BaselineConfig:
     topk_per_target: int = 20
 
     # Popularity
-    popularity_topk: int = 300
+    popularity_topk: int = 450
     popularity_event_weights: Dict[str, float] = field(
         default_factory=lambda: {"clicks": 1.0, "carts": 6.0, "orders": 10.0}
     )
@@ -22,17 +22,17 @@ class BaselineConfig:
     # Co-visitation (memory-aware)
     session_max_events_for_covis: int = 30
     covis_max_time_window_ms: int = 24 * 60 * 60 * 1000
-    covis_max_pairs_per_anchor: int = 20
-    covis_topk_neighbors: int = 40
+    covis_max_pairs_per_anchor: int = 24
+    covis_topk_neighbors: int = 50
     covis_prune_keep_multiplier: int = 4
 
     # Candidate generation
-    session_history_max_events: int = 30
-    covis_candidates_per_item: int = 25
-    min_candidates_before_fallback: int = 120
+    session_history_max_events: int = 35
+    covis_candidates_per_item: int = 40
+    min_candidates_before_fallback: int = 160
 
     # Heuristic scoring weights
-    recency_decay: float = 0.92
+    recency_decay: float = 0.93
     target_weights: Dict[str, Dict[str, float]] = field(
         default_factory=lambda: {
             "clicks": {

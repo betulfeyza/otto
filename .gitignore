@@ -34,9 +34,8 @@ env/
 *~
 .DS_Store
 
-# Data and outputs (keep in .gitkeep for structure)
-outputs/*.csv
-outputs/*.parquet
+# Data and outputs
+outputs/
 archive/
 
 # Jupyter
